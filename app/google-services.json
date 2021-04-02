@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "411545228661",
+    "project_id": "seeu-f9acc",
+    "storage_bucket": "seeu-f9acc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411545228661:android:236f17f8b3cea3cb202f3c",
+        "android_client_info": {
+          "package_name": "com.example.seeu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411545228661-jh59kcgcld260mc0m2t4tqfkeeqss03o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoIEAHS4XnMrbL8aCjG24O8ranlaOZ51w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411545228661-jh59kcgcld260mc0m2t4tqfkeeqss03o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

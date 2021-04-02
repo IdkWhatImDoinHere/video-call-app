@@ -30,6 +30,7 @@ import com.hbb20.CountryCodePicker;
 import java.util.concurrent.TimeUnit;
 
 public class Registration extends AppCompatActivity {
+
     private CountryCodePicker ccp;
     private EditText phoneText;
     private EditText codeText;
@@ -87,7 +88,8 @@ public class Registration extends AppCompatActivity {
 
                 } else {
                     phoneNumber = ccp.getFullNumberWithPlus();
-                    if (phoneNumber.equals("")) {
+                    if (!phoneNumber.equals("")) {
+
 
                         loadingBar.setTitle("Phone Number Verification ");
                         loadingBar.setMessage("Please Wait...");
@@ -120,11 +122,14 @@ public class Registration extends AppCompatActivity {
 
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
+
                 Toast.makeText(Registration.this, "Invalid Phone Number", Toast.LENGTH_SHORT).show();
+                loadingBar.dismiss();
+
                 relativeLayout.setVisibility(View.VISIBLE);
 
                 continueAndNextBtn.setText("Continue");
-                codeText.setVisibility(View.VISIBLE);
+                codeText.setVisibility(View.GONE);
             }
 
             @Override
@@ -139,6 +144,7 @@ public class Registration extends AppCompatActivity {
                 continueAndNextBtn.setText("Submit");
 
                 codeText.setVisibility(View.VISIBLE);
+                loadingBar.dismiss();
 
                 Toast.makeText(Registration.this, "Code sent", Toast.LENGTH_SHORT).show();
             }
@@ -154,7 +160,8 @@ public class Registration extends AppCompatActivity {
                             loadingBar.dismiss();
                             Toast.makeText(Registration.this, "Logged In", Toast.LENGTH_SHORT).show();
                             sendUserToMainActivity();
-                        } else {
+                        }
+                        else {
                        loadingBar.dismiss();
                        String e =task.getException().toString();
                             Toast.makeText(Registration.this, "Error: "+e, Toast.LENGTH_SHORT).show();
@@ -165,6 +172,7 @@ public class Registration extends AppCompatActivity {
     private void sendUserToMainActivity()
     {
         Intent intent = new Intent(Registration.this,MainActivity.class);
+        startActivity(intent);
 finish();
     }
 }
